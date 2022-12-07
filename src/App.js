@@ -5,6 +5,7 @@ import ContactComponentA from './components/container/contact_A';
 import Ejemplo1 from './hooks/Ejemplo1';
 import Ejemplo2 from './hooks/Ejemplo2';
 import MicomponenteConContexto from './hooks/Ejemplo3';
+import Ejemplo4 from './hooks/ejemplo4';
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
         {/* <TaskListComponent/> */}
         {/* <ContactComponentA></ContactComponentA> */}
         {/* Ejemplos de uso de Hooks */}
+        <Ejemplo4 nombre="Cristian">
+          <h3>Este contenido es la props.children</h3>
+        </Ejemplo4>
         <MicomponenteConContexto/>
         <Ejemplo2/>
         <Ejemplo1/>

@@ -59,7 +59,7 @@ export default function MicomponenteConContexto() {
          * Ademas, si se actualiza, los componentes de aqui, tambien lo actualizan
          */}
 
-         <h1>***** Ejemplode useState() y useContext() ******</h1>
+         <h1>***** Ejemplo de useState() y useContext() ******</h1>
         <Componente1/>
         <button onClick={actualizarSesion}>Actualizar sesion</button>
     </miContexto.Provider>
