@@ -30,7 +30,7 @@ const Componente2 = () => {
 
   return (
     <div>
-      <h2>La sesion es: {state.sesion}</h2>
+      <h2>sesion: {state.sesion}</h2>
     </div>
   );
 };
