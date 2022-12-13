@@ -12,8 +12,8 @@ import Clock from './components/pure/clock';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      {/* <header className="App-header"> */}
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         {/* <Clock/> */}
         {/* <GreetingStyled name="Cristian"></GreetingStyled> */}
         {/* <TaskListComponent/> */}
@@ -25,7 +25,8 @@ function App() {
         <MicomponenteConContexto/>
         <Ejemplo2/>
         <Ejemplo1/> */}
-      </header>
+        {/* </header> */}
+        <TaskListComponent></TaskListComponent>
     </div>
   );
 }
