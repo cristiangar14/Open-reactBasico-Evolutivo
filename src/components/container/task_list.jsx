@@ -3,6 +3,8 @@ import { LEVELS } from "../../models/levels.enum";
 import { Task } from "../../models/task.class";
 import TaskComponent from "../pure/task";
 
+import '../../styles/task.scss'
+
 const TaskListComponent = () => {
   
   const defaultTask = new Task(
@@ -14,11 +16,12 @@ const TaskListComponent = () => {
     
   // Estado del componente
   const [tasks, setTasks] = useState(defaultTask);
-
+  const [loading, setLoading] = useState(true);
   // control del ciclo de vida
 
   useEffect(() => {
     console.log('Tasks state has been modified');
+    setLoading(false);
     return () => {
       console.log('Tasklist component is going to unmount...');
     };
@@ -31,7 +34,7 @@ const TaskListComponent = () => {
   return (
     <div>
         <div>
-            <h2>Your tasks:</h2>
+            <h1>Your tasks:</h1>
         </div>
         {/*TODO realizar el loop con la lista de tareas */}
         <TaskComponent task={defaultTask}></TaskComponent>
