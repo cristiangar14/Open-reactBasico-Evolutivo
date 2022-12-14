@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 //Añadimos bootstrap al proyecto
 import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 // ! los estilos propios debe estar debajo de lso de bootstrap
 import './index.css';
 import App from './App';

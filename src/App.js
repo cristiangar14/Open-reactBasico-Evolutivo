@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import TaskListComponent from './components/container/task_list';
 import ContactComponentA from './components/container/contact_A';
@@ -8,6 +7,7 @@ import MicomponenteConContexto from './hooks/Ejemplo3';
 import Ejemplo4 from './hooks/Ejemplo4';
 import GreetingStyled from './components/pure/greetingStyled';
 import Clock from './components/pure/clock';
+import Father from './components/container/father';
 
 function App() {
   return (
@@ -26,6 +26,7 @@ function App() {
         <Ejemplo2/>
         <Ejemplo1/> */}
         {/* </header> */}
+        {/* <Father></Father> */}
         <TaskListComponent></TaskListComponent>
     </div>
   );
