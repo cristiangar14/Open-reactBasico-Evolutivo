@@ -36,7 +36,7 @@ const TaskForm = ({ add }) => {
         <input
           type="text"
           ref={descriptionRef}
-          id="inputDescription"
+          id="inputDescriptio"
           placeholder="Task description"
           className="form-control form-control-lg"
           required
