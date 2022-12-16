@@ -10,6 +10,7 @@ import Clock from "./components/pure/clock";
 import Father from "./components/container/father";
 import OptionalRender from "./components/pure/optionalRender";
 import ChangeColor from "./components/pure/changeColor";
+import LoginFormik from "./components/pure/forms/loginFormik";
 
 function App() {
   return (
@@ -32,7 +33,8 @@ function App() {
       {/* Ejemplos de renderizado condicional */}
       {/* <OptionalRender />
       <ChangeColor /> */}
-      <TaskListComponent></TaskListComponent>
+      <LoginFormik/>
+      {/* <TaskListComponent></TaskListComponent> */}
     </div>
   );
 }
