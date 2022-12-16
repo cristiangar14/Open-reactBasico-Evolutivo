@@ -11,6 +11,7 @@ import Father from "./components/container/father";
 import OptionalRender from "./components/pure/optionalRender";
 import ChangeColor from "./components/pure/changeColor";
 import LoginFormik from "./components/pure/forms/loginFormik";
+import RegisterFormik from "./components/pure/forms/registerFormik";
 
 function App() {
   return (
@@ -33,8 +34,9 @@ function App() {
       {/* Ejemplos de renderizado condicional */}
       {/* <OptionalRender />
       <ChangeColor /> */}
-      <LoginFormik/>
-      {/* <TaskListComponent></TaskListComponent> */}
+      {/* <LoginFormik/> */}
+      {/* <RegisterFormik/> */}
+      <TaskListComponent></TaskListComponent>
     </div>
   );
 }
