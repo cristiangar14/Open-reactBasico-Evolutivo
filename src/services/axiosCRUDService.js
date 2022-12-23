@@ -17,18 +17,47 @@ export const login = (email, password) => {
     return axios.post(`${url}/login`, body)
 }
 
-// TODO Obtain all users
+// Obtain all users
 
 export const getAllUsers = () => {
     return axios.get(`${url}/users`)
 }
 
-// TODO Obtain all paged users
+// Obtain all paged users
 
 export const getAllPagedUsers = (page) => {
     return axios.get(`${url}/users?page=${page}`)
 }
-// TODO Obtain User by id
-// TODO Create user
-// TODO update user
+// Obtain User by id
+
+export const getUserById = (id) => {
+    return axios.get(`${url}/users/${id}`)
+}
+
+// Create user
+
+export const createUser = (name, job) => {
+    const body = {
+        name,
+        job
+    }
+    
+    // Returns the response whit a Promise
+    return axios.post(`${url}/users`, body)
+}
+
+// update user
+export const updateUser = (id, name, job) => {
+    const body = {
+        name,
+        job
+    }
+    
+    // Returns the response whit a Promise
+    return axios.put(`${url}/users/${id}`, body)
+}
+
 // TODO delete user
+export const deleteUser = (id) => {
+    return axios.delete(`${url}/users/${id}`)
+}

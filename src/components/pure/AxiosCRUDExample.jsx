@@ -6,6 +6,10 @@ import {
   getAllUsers,
   login,
   getAllPagedUsers,
+  getUserById,
+  createUser,
+  updateUser,
+  deleteUser,
 } from "../../services/axiosCRUDService";
 import { Button } from "@mui/material";
 
@@ -43,17 +47,82 @@ const AxiosCRUDExample = () => {
 
   const obtainAllUsers = () => {
     getAllUsers()
-      .then((response) => console.table(response.data.data))
+      .then((response) => {
+        if (response.data.data && response.status === 200) {
+          console.table(response.data.data)
+        } else {
+          throw new Error('Users not found')
+        }
+      })
       .catch((error) => alert(`Somethind went wrong: ${error}`))
       .finally(() => console.log(""));
   };
 
   const obtainAllPagedUsers = (page) => {
     getAllPagedUsers(page)
-      .then((response) => alert(JSON.stringify(response.data.total_pages)))
+      .then((response) => {
+        if (response.data.data && response.status === 200) {
+          alert(JSON.stringify(response.data.data))
+        } else {
+          throw new Error(`not Users found in page ${page}`)
+        }
+      })
       .catch((error) => alert(`Somethind went wrong: ${error}`))
       .finally(() => console.log(""));
   };
+
+  const obtainUserById = (id) => {
+    getUserById(id)
+      .then((response) => {
+        if (response.data.data && response.status === 200) {
+          alert(JSON.stringify(response.data.data))
+        } else {
+          throw new Error('User not found')
+        }
+      })
+      .catch((error) => alert(`Somethind went wrong: ${error}`))
+      .finally(() => console.log(""));
+  };
+
+  const createNewUser = (values) => {
+    createUser(values.name, values.job)
+      .then((response) => {
+        if (response.data && response.status === 201) {
+          alert(JSON.stringify(response.data))
+        } else {
+          throw new Error('User not created')
+        }
+      })
+      .catch((error) => alert(`Somethind went wrong: ${error}`))
+      .finally(() => console.log(""));
+  }
+
+  const updateUserById = (values) => {
+    updateUser(values.id, values.name, values.job)
+      .then((response) => {
+        if (response.data && response.status === 200) {
+          alert(JSON.stringify(response.data))
+        } else {
+          throw new Error('User not found & no update done')
+        }
+      })
+      .catch((error) => alert(`Somethind went wrong: ${error}`))
+      .finally(() => console.log(""));
+  };
+
+  const deleteUserById = (id) => {
+    deleteUser(id)
+      .then((response) => {
+        if (response.status === 204) {
+          alert(`User whit id: ${id} successfully deleted`)
+        } else {
+          throw new Error('User not found & delete done')
+        }
+      })
+      .catch((error) => alert(`Somethind went wrong: ${error}`))
+      .finally(() => console.log(""));
+  };
+
 
   return (
     <div className="">
@@ -110,7 +179,11 @@ const AxiosCRUDExample = () => {
       {/* Example buttons to test API reponses */}
       <div className="">
         <Button onClick={obtainAllUsers}>All Users</Button>
-        <Button onClick={() => obtainAllPagedUsers(2)}>Page Users</Button>
+        <Button onClick={() => obtainAllPagedUsers(1)}>Page Users</Button>
+        <Button onClick={() => obtainUserById(1)}>Get user 1</Button>
+        <Button onClick={() => createNewUser({name:'morpheus', job:'leader'})}>Create user</Button>
+        <Button onClick={() => updateUserById({id: 1,name:'morpheus', job:'leader'})}>Update user</Button>
+        <Button onClick={() => deleteUserById(1)}>Delete user</Button>
       </div>
     </div>
   );
